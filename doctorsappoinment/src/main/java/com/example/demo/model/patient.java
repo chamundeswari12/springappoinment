@@ -2,31 +2,42 @@ package com.example.demo.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+ import com.example.demo.model.Doctor;
+
+import org.hibernate.annotations.JoinColumnOrFormula;
 @Entity
 public class patient {
 	@Id
-
-	private int id;
+	private int pid;
 	private String firstname;
 	private String lastname;
-	@OneToMany
-	private List<Doctor> Doctor;
-	public List<Doctor> getDoctor() {
-		return Doctor;
+	@ManyToMany
+	private List<Doctor> doc;
+	
+	
+	
+	
+	
+	public List<Doctor> getDoc() {
+		return doc;
 	}
-	public void setDoctor(List<Doctor> doctor) {
-		Doctor = doctor;
+	public void setDoc(List<Doctor> doc) {
+		this.doc = doc;
 	}
 	public int getId() {
-		return id;
+		return pid;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.pid = pid;
 	}
 	public String getFirstname() {
 		return firstname;
@@ -40,6 +51,11 @@ public class patient {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+	
+	
+	
+	
+	
 
 
 }

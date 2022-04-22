@@ -1,20 +1,39 @@
 package com.example.demo.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+
 @Entity
 public class Doctor {
 	@Id
-	private long doctorid;
+
+	private int did;
 	private String doctorname;
 	private String specilization;
-	private Date createdDate;
-	private Date createdBy;
-	private Date updateDate;
-	private Date updateby;
-
+	
+	@ManyToMany(mappedBy = "doc")
+	private List<patient> pat;
+	
+	
+	
+	
+	
+	
+	
+	public int getDid() {
+		return did;
+	}
+	public void setDid(int did) {
+		this.did = did;
+	}
 	public String getDoctorname() {
 		return doctorname;
 	}
@@ -27,30 +46,11 @@ public class Doctor {
 	public void setSpecilization(String specilization) {
 		this.specilization = specilization;
 	}
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-	public Date getCreatedBy() {
-		return createdBy;
-	}
-	public void setCreatedBy(Date createdBy) {
-		this.createdBy = createdBy;
-	}
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
-	public Date getUpdateby() {
-		return updateby;
-	}
-	public void setUpdateby(Date updateby) {
-		this.updateby = updateby;
-	}
+	
+	
+	
+	
+	
 	
 
 }
