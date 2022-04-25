@@ -6,11 +6,15 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Doctor {
@@ -25,7 +29,10 @@ public class Doctor {
        private String location;
        private int doctorfee;
        
+       @Enumerated(EnumType.STRING)
+       private DoctorAvailablity status;
        
+   
        
        public Doctor() {
        
@@ -75,12 +82,47 @@ public class Doctor {
 	public void setSpecialist(String specialist) {
 		this.specialist = specialist;
 	}
+
 	public Date getAvailableTime() {
 		return availableTime;
 	}
+
+
+
+
+
+
+
 	public void setAvailableTime(Date availableTime) {
 		this.availableTime = availableTime;
 	}
+
+
+
+
+
+
+
+	public DoctorAvailablity getStatus() {
+		return status;
+	}
+
+
+
+
+
+
+
+	public void setStatus(DoctorAvailablity status) {
+		this.status = status;
+	}
+
+
+
+
+
+
+
 	public String getFeedback() {
 		return feedback;
 	}

@@ -8,15 +8,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lhs.dao.DoctorRepo;
 import com.lhs.entity.Doctor;
-
+import com.lhs.entity.SlotBooking;
 import com.lhs.service.DoctorService;
 
 
 @RestController
+@RequestMapping("/api")
 public class DoctorController {
 	
 	
@@ -25,7 +27,7 @@ public class DoctorController {
     @Autowired
     DoctorRepo doctorRepo;
     
-	@PostMapping("/addingDoctor")
+	@PostMapping("/addingDoctors")
 	public ResponseEntity<String> addingcontroller(@RequestBody Doctor doc)
 	{
 		
@@ -35,6 +37,19 @@ public class DoctorController {
 		
 
 	}
+	
+	
+	@PostMapping("/add")
+	public ResponseEntity<String> addingcontroller(@RequestBody SlotBooking doc)
+	{
+		
+		doctorService.slotadding(doc);
+
+		return ResponseEntity.ok("added account sucessfully "  );
+		
+
+	}
+	
 	
 	@GetMapping("/gettingdoctor")
 	public List<Doctor> gettingall(@RequestBody Doctor doc)
