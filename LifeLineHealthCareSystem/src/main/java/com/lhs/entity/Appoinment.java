@@ -19,8 +19,15 @@ public class Appoinment {
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private Doctor doctor;
+	
+	
+	
+	
+	
+	
 
 	public int getId() {
+		
 		return id;
 	}
 

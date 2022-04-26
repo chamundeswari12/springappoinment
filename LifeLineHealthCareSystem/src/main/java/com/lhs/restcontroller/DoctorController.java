@@ -18,7 +18,7 @@ import com.lhs.service.DoctorService;
 
 
 @RestController
-@RequestMapping("/api")
+//@RequestMapping("/api")
 public class DoctorController {
 	
 	
@@ -45,7 +45,7 @@ public class DoctorController {
 		
 		doctorService.slotadding(doc);
 
-		return ResponseEntity.ok("added account sucessfully "  );
+		return ResponseEntity.ok(" slot added sucessfully "  );
 		
 
 	}

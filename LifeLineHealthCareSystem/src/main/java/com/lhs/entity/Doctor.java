@@ -32,9 +32,22 @@ public class Doctor {
        @Enumerated(EnumType.STRING)
        private DoctorAvailablity status;
        
-   
        
-       public Doctor() {
+     
+       
+       
+     
+
+
+
+
+
+
+
+
+
+
+	public Doctor() {
        
        }
        
