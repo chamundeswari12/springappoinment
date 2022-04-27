@@ -11,8 +11,8 @@ import com.lhs.entity.Doctor;
 public interface DoctorRepo extends JpaRepository<Doctor, Integer> {
 
 	List<Doctor> findBySpecialistAndLocation(String specialist, String location);
-     Doctor findByDoctorNameAndLocationAndAvailableTime(String DoctorName,
-    		 String Location,Date availableTime);
+     List<Doctor> findByDoctorNameAndSpecialistAndLocationAndAvailableTime(String DoctorName,
+    		 String specialist,String Location,Date availableTime);
 	
 	
 	

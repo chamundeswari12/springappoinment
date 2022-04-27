@@ -8,7 +8,24 @@ public class AppoinmentDetails {
 	private String doctorname;
 	private String location;
 	private Date availableTime;
+	private String specialist;
 	
+	public String getSpecialist() {
+		return specialist;
+	}
+
+
+
+
+
+	public void setSpecialist(String specialist) {
+		this.specialist = specialist;
+	}
+
+
+
+
+
 	public AppoinmentDetails()
 	{
 		

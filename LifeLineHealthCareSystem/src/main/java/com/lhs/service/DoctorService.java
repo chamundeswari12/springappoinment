@@ -12,8 +12,8 @@ import com.lhs.entity.SlotBooking;
 @Service
 public class DoctorService {
 	
-		@Autowired	
-		SlotRepo slotRepo;
+	@Autowired	
+	SlotRepo slotRepo;
 			
 	@Autowired
 	DoctorRepo doctorRepo;
@@ -40,10 +40,7 @@ public class DoctorService {
 		// if(slot.getDayid().equals(this.doctors.getAvailableTime()))
 		   
 		     slot.setDoctor(this.doctors); 
-		     slotRepo.save(slot);
-		 
-		  
-		   
+		     slotRepo.save(slot);	   
 		   
 	   }
 
